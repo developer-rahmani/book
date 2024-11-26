@@ -12,12 +12,20 @@ export async function generateMetadata() {
   };
 }
 
-async function fetchData() {
-  return prefetchBooksQuery();
+async function fetchData(search: string) {
+  return prefetchBooksQuery(search);
 }
 
-const Page = async () => {
-  const data = await fetchData();
+interface PageProps {
+  searchParams: {
+    search: string;
+  };
+}
+
+const Page = async ({ searchParams }: PageProps) => {
+  const data = await fetchData(searchParams.search);
+
+  console.log("ctx", searchParams.search);
 
   return <Home fallbackData={data} />;
 };

@@ -26,9 +26,11 @@ const BookCard = ({ book }: Props) => {
           src={book.cover_image}
         />
       </div>
-      <p className="text-neutral-dark-100">{book.title}</p>
-      <p className="text-neutral-dark-200">{book.description}</p>
-      <div className="flex items-center gap-1 text-sm">
+      <div className="flex flex-col gap-4">
+        <p className="text-neutral-dark-100">{book.title}</p>
+        <p className="text-neutral-dark-200">{book.description}</p>
+      </div>
+      <div className="mt-auto flex items-center gap-1 text-sm">
         {book.genre.map((genre) => (
           <div
             className="rounded-full bg-purple-300 px-2 text-purple-100"

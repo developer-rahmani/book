@@ -3,6 +3,7 @@
 import type { BookSchema } from "@/libs/schema/book";
 
 import { useBooksQuery } from "@/libs/dataLayer/query/useBooksQuery";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 
 import BookCard from "./BookCard";
@@ -13,7 +14,14 @@ interface Props {
 }
 
 const Home = ({ fallbackData }: Props) => {
-  const { data } = useBooksQuery({ fallbackData });
+  const searchParams = useSearchParams();
+
+  console.log("searchParams", searchParams.get("search"));
+
+  const { data } = useBooksQuery({
+    fallbackData,
+    search: searchParams.get("search") ?? "",
+  });
 
   return (
     <div className="flex flex-col gap-6">

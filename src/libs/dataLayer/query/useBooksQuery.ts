@@ -3,20 +3,47 @@ import type { BookSchema } from "@/libs/schema/book";
 import { api } from "@/api/api";
 import useSWR from "swr";
 
-export const prefetchBooksQuery = (): Promise<BookSchema[]> => {
-  return api.get("/books").then((res) => res.data);
+export const prefetchBooksQuery = (search: string): Promise<BookSchema[]> => {
+  return api
+    .get("/books", {
+      params: {
+        ...(search && { search }),
+      },
+    })
+    .then((res) => res.data);
 };
 
-const booksQuery = (url: string): Promise<BookSchema[]> => {
-  return api.get(url).then((res) => res.data);
+interface AxiosProps {
+  url: string;
+  searchQuery: string;
+}
+
+const booksQuery = ({
+  url,
+  searchQuery,
+}: AxiosProps): Promise<BookSchema[]> => {
+  return api
+    .get(url, {
+      params: {
+        ...(searchQuery && {
+          search: searchQuery,
+        }),
+      },
+    })
+    .then((res) => res.data);
 };
 
 interface Props {
   fallbackData: BookSchema[];
+  search: string;
 }
 
-export const useBooksQuery = ({ fallbackData }: Props) => {
-  return useSWR("/books", booksQuery, {
-    fallbackData,
-  });
+export const useBooksQuery = ({ fallbackData, search }: Props) => {
+  return useSWR(
+    ["/books", search],
+    ([url, searchQuery]) => booksQuery({ url, searchQuery }),
+    {
+      fallbackData,
+    },
+  );
 };
