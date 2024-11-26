@@ -1,37 +1,37 @@
 {
-    "shared": {
-        "navigation": {
-            "auth": {
-                "sign": "ورود / ثبت نام",
-                "logout": "خروج"
-            },
-            "lang": {
-                "persian" : "فارسی",
-                "english" : "انگلیسی"
-            },
-            "home": "صفحه اصلی"
-        }
-    },
-    "home": {
-        "title": "صفحه اصلی",
-        "search":"جستجوی عنوان کتاب",
-        "emptyMsg" : "کتابی پیدا نشد"
-    },
-    "book":{
-        "title": "کتاب {title}"
-    },
-    "auth": {
-        "username": {
-            "label": "نام کاربری",
-            "required": "نام کاربری الزامی است"
-        },
-        "password": {
-            "label": "رمز عبور",
-            "required": "رمز عبور الزامی است"
-        },
-        "action": {
-            "confirm": "ورود",
-            "cancel": "انصراف"
-        }
+  "shared": {
+    "navigation": {
+      "auth": {
+        "sign": "ورود / ثبت نام",
+        "logout": "خروج"
+      },
+      "lang": {
+        "persian": "فارسی",
+        "english": "انگلیسی"
+      },
+      "home": "صفحه اصلی"
     }
+  },
+  "home": {
+    "title": "صفحه اصلی",
+    "search": "جستجوی عنوان کتاب",
+    "emptyMsg": "کتابی پیدا نشد"
+  },
+  "book": {
+    "title": "کتاب {title}"
+  },
+  "auth": {
+    "username": {
+      "label": "نام کاربری",
+      "required": "نام کاربری الزامی است"
+    },
+    "password": {
+      "label": "رمز عبور",
+      "required": "رمز عبور الزامی است"
+    },
+    "action": {
+      "confirm": "ورود",
+      "cancel": "انصراف"
+    }
+  }
 }

@@ -28,7 +28,7 @@ const Home = ({ fallbackData }: Props) => {
       <HomeSearchInput />
       {data.length === 0 ? (
         <div className="flex justify-center">
-          <p className="text-g-200">{t("emptyMsg")}</p>
+          <p className="text-neutral-dark-200">{t("emptyMsg")}</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
