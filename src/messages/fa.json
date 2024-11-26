@@ -1,0 +1,28 @@
+{
+    "shared": {
+        "navigation": {
+            "auth": {
+                "login": "ورود / ثبت نام",
+                "logout": "خروج"
+            },
+            "home": "صفحه اصلی"
+        }
+    },
+    "home": {
+        "title": "صفحه اصلی"
+    },
+    "auth": {
+        "username": {
+            "label": "نام کاربری",
+            "required": "نام کاربری الزامی است"
+        },
+        "password": {
+            "label": "رمز عبور",
+            "required": "رمز عبور الزامی است"
+        },
+        "action": {
+            "confirm": "ورود",
+            "cancel": "انصراف"
+        }
+    }
+}
