@@ -5,7 +5,7 @@ import NavigationRoutes from "./NavigationRoutes";
 
 const Navigation = () => {
   return (
-    <header className="flex justify-between gap-2">
+    <header className="z-[1] flex justify-between gap-2">
       <NavigationRoutes />
       <NavigationAuthButton />
     </header>

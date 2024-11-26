@@ -1,8 +1,8 @@
 import type { Control, FieldValues, Path } from "react-hook-form";
 
 import Input from "@/libs/design/Input/Input";
-import EyeSlashIcon from "@assets/auth/eye-slash.svg";
 import EyeIcon from "@assets/auth/eye.svg";
+import EyeSlashIcon from "@assets/auth/eyeSlash.svg";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import { Controller } from "react-hook-form";

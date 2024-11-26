@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowDown from "@assets/navigation/arrow-down.svg";
+import ArrowDown from "@assets/navigation/arrowDown.svg";
 import { signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";

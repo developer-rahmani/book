@@ -11,6 +11,9 @@
     "home": {
         "title": "صفحه اصلی"
     },
+    "book":{
+        "title": "کتاب {title}"
+    },
     "auth": {
         "username": {
             "label": "نام کاربری",

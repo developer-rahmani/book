@@ -1,11 +1,14 @@
 :root {
     --primary-100: #eaeaea;
     --primary-200: #dddddd;
+    --primary-300: #efefef;
 
     --neutral-dark-100: #141414;
+    --neutral-dark-200: #666666;
 
     --purple-100: #764abc;
     --purple-200: #9674cc;
+    --purple-300: #9674cc3b;
 
     --semantic-red-100: #ff0025;
 }
