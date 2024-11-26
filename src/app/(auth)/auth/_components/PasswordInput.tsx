@@ -35,7 +35,6 @@ const PasswordInput = <T extends FieldValues>({
           onChange={(e) => onChange(e.target.value)}
           rightSection={
             <button
-              className="absolute right-3 top-[50%] translate-y-[-50%]"
               type="button"
               onClick={() => setIsShowPassword((prevState) => !prevState)}
             >
