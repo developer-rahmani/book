@@ -1,26 +1,32 @@
 import NextAuthProvider from "@/providers/NextAuthProvider/NextAuthProvider";
 import "@/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
 
-const iranSans = localFont({
-  src: "./../assets/font.woff2",
+const mainFont = localFont({
+  src: "./../../assets/font.woff2",
 });
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { locale },
+}: {
   children: React.ReactNode;
-}>) {
-  const locale = await getLocale();
+  params: { locale: string };
+}) {
   const messages = await getMessages();
 
   return (
-    <html dir="rtl" lang={locale}>
+    <html dir={locale === "en" ? "ltr" : "rtl"} lang={locale}>
+      <head>
+        <meta charSet="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+      </head>
+
       <body
         suppressHydrationWarning
-        className={`${iranSans.className} bg-primary-100`}
+        className={`${mainFont.className} bg-primary-100`}
       >
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages}>

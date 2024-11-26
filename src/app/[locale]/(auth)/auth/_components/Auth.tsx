@@ -6,6 +6,7 @@ import type { SignInResponse } from "next-auth/react";
 import { authSchema } from "@/libs/domain/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 
 import AuthActions from "./AuthActions";
@@ -13,6 +14,7 @@ import PasswordInput from "./PasswordInput";
 import UsernameInput from "./UsernameInput";
 
 const Auth = () => {
+  const t = useTranslations();
   const methods = useForm<AuthSchema>({
     defaultValues: {
       password: "",
@@ -49,12 +51,14 @@ const Auth = () => {
       >
         <UsernameInput
           control={control}
-          error={errors.username?.message}
+          // @ts-ignore - I am unable to translate text outside of a component
+          error={errors.username?.message ? t(errors.username.message) : ""}
           name="username"
         />
         <PasswordInput
           control={control}
-          error={errors.password?.message}
+          // @ts-ignore - I am unable to translate text outside of a component
+          error={errors.password?.message ? t(errors.password.message) : ""}
           name="password"
         />
         <AuthActions />

@@ -40,9 +40,9 @@ const NavigationLogoutButton = ({ name }: Props) => {
       </Button>
 
       {isOpenDropdown && (
-        <div className="absolute inset-x-0 top-[calc(100%+4px)] rounded-xl bg-primary-200 px-4 text-sm">
+        <div className="fade-animation absolute inset-x-0 top-[calc(100%+4px)] rounded-xl bg-primary-200 px-4 text-sm">
           <Button
-            className="size-0 h-10 w-full border-none py-2 text-right"
+            className="size-0 h-12 w-full border-none px-2 text-start"
             onClick={() => signOut({ callbackUrl: "/", redirect: true })}
           >
             {t("logout")}

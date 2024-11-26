@@ -1,9 +1,22 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import React from "react";
 
-import { navigationRouteItems } from "./navigationRouteItems";
+interface Routes {
+  label: string;
+  to: string;
+}
 
 const NavigationRoutes = () => {
+  const t = useTranslations("shared.navigation");
+
+  const navigationRouteItems: Routes[] = [
+    {
+      label: t("home"),
+      to: "/",
+    },
+  ];
+
   return (
     <div className="flex items-center gap-2">
       {navigationRouteItems.map((item) => (

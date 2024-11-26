@@ -28,10 +28,10 @@ const Home = ({ fallbackData }: Props) => {
       <HomeSearchInput />
       {data.length === 0 ? (
         <div className="flex justify-center">
-          <p className="text-neutral-dark-200">{t("emptyMsg")}</p>
+          <p className="text-g-200">{t("emptyMsg")}</p>
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.slice(0, 9).map((book) => (
             <BookCard book={book} key={book.id} />
           ))}

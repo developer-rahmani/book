@@ -1,8 +1,8 @@
 import { getServerAuthSession } from "@/app/api/auth/[...nextauth]/authOptions";
 import React from "react";
 
-import NavigationLoginButton from "./NavigationLoginButton";
 import NavigationLogoutButton from "./NavigationLogoutButton";
+import NavigationSignButton from "./NavigationSignButton";
 
 const NavigationAuthButton = async () => {
   const data = await getServerAuthSession();
@@ -10,7 +10,7 @@ const NavigationAuthButton = async () => {
   return data?.isLogged ? (
     <NavigationLogoutButton name={String(data.user?.name)} />
   ) : (
-    <NavigationLoginButton />
+    <NavigationSignButton />
   );
 };
 

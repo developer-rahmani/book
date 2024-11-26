@@ -5,7 +5,7 @@ interface Props {
 }
 
 const SingleBookTitle = ({ title }: Props) => {
-  return <p className="text-right text-xl text-neutral-dark-200">{title}</p>;
+  return <p className="text-start text-xl text-neutral-dark-200">{title}</p>;
 };
 
 export default SingleBookTitle;

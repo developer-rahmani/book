@@ -1,0 +1,37 @@
+{
+    "shared": {
+        "navigation": {
+            "auth": {
+                "sign": "Sign in / Sign up",
+                "logout": "Logout"
+            },
+            "lang": {
+                "persian" : "Persian",
+                "english" : "English"
+            },
+            "home": "Home"
+        }
+    },
+    "home": {
+        "title": "Home",
+        "search": "Search",
+        "emptyMsg": "No book"
+    },
+    "book": {
+        "title": "Book {title}"
+    },
+    "auth": {
+        "username": {
+            "label": "Username",
+            "required": "Username is required"
+        },
+        "password": {
+            "label": "Password",
+            "required": "Password is required"
+        },
+        "action": {
+            "confirm": "Continue",
+            "cancel": "Cancel"
+        }
+    }
+}

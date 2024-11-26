@@ -1,6 +1,7 @@
 @import "./root.css";
 @import "./reset.css";
 @import "./shared.css";
+@import "./animation.css";
 
 @tailwind base;
 @tailwind components;

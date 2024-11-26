@@ -2,8 +2,12 @@
     "shared": {
         "navigation": {
             "auth": {
-                "login": "ورود / ثبت نام",
+                "sign": "ورود / ثبت نام",
                 "logout": "خروج"
+            },
+            "lang": {
+                "persian" : "فارسی",
+                "english" : "انگلیسی"
             },
             "home": "صفحه اصلی"
         }

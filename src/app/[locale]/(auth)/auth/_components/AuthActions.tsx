@@ -1,6 +1,6 @@
+import { Link } from "@/i18n/routing";
 import Button from "@/libs/design/Button/Button";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import React from "react";
 
 const AuthActions = () => {
