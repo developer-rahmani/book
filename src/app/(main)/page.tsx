@@ -25,8 +25,6 @@ interface PageProps {
 const Page = async ({ searchParams }: PageProps) => {
   const data = await fetchData(searchParams.search);
 
-  console.log("ctx", searchParams.search);
-
   return <Home fallbackData={data} />;
 };
 

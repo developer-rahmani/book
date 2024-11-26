@@ -26,7 +26,7 @@ async function fetchData(id: string) {
 const Page = async ({ params }: PageProps) => {
   const data = await fetchData(params.id);
 
-  return <SingleBook fallbackData={data} id={params.id} />;
+  return <SingleBook fallbackData={data} />;
 };
 
 export default Page;

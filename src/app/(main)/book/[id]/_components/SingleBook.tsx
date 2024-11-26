@@ -3,6 +3,7 @@
 import type { BookSchema } from "@/libs/schema/book";
 
 import { useBookQuery } from "@/libs/dataLayer/query/useBookQuery";
+import { useParams } from "next/navigation";
 import React from "react";
 
 import SingleBookCover from "./SingleBookCover";
@@ -12,11 +13,11 @@ import SingleBookTitle from "./SingleBookTitle";
 
 interface Props {
   fallbackData: BookSchema;
-  id: string;
 }
 
-const SingleBook = ({ fallbackData, id }: Props) => {
-  const { data } = useBookQuery({ fallbackData, id });
+const SingleBook = ({ fallbackData }: Props) => {
+  const params = useParams();
+  const { data } = useBookQuery({ fallbackData, id: params.id.toString() });
 
   return (
     <div className="flex flex-col gap-6">

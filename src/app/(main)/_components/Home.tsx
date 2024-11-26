@@ -3,6 +3,7 @@
 import type { BookSchema } from "@/libs/schema/book";
 
 import { useBooksQuery } from "@/libs/dataLayer/query/useBooksQuery";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
@@ -15,8 +16,7 @@ interface Props {
 
 const Home = ({ fallbackData }: Props) => {
   const searchParams = useSearchParams();
-
-  console.log("searchParams", searchParams.get("search"));
+  const t = useTranslations("home");
 
   const { data } = useBooksQuery({
     fallbackData,
@@ -26,11 +26,17 @@ const Home = ({ fallbackData }: Props) => {
   return (
     <div className="flex flex-col gap-6">
       <HomeSearchInput />
-      <div className="grid grid-cols-3 gap-4">
-        {data.slice(0, 9).map((book) => (
-          <BookCard book={book} key={book.id} />
-        ))}
-      </div>
+      {data.length === 0 ? (
+        <div className="flex justify-center">
+          <p className="text-neutral-dark-200">{t("emptyMsg")}</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-4">
+          {data.slice(0, 9).map((book) => (
+            <BookCard book={book} key={book.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

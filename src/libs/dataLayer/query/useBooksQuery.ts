@@ -3,7 +3,9 @@ import type { BookSchema } from "@/libs/schema/book";
 import { api } from "@/api/api";
 import useSWR from "swr";
 
-export const prefetchBooksQuery = (search: string): Promise<BookSchema[]> => {
+export const prefetchBooksQuery = async (
+  search: string,
+): Promise<BookSchema[]> => {
   return api
     .get("/books", {
       params: {
@@ -18,7 +20,7 @@ interface AxiosProps {
   searchQuery: string;
 }
 
-const booksQuery = ({
+const booksQuery = async ({
   url,
   searchQuery,
 }: AxiosProps): Promise<BookSchema[]> => {
